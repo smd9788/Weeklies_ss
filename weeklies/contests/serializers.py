@@ -4,7 +4,8 @@ from .models import Contest, Security, SecurityPool
 class ContestSerializer(serializers.ModelSerializer):
     class Meta:
         model = Contest
-        fields = ('end_date', 'entry_fee', 'num_contestants', 'start_date', 'security_pool_id', 'title')
+        fields = ('title', 'start_date', 'end_date', 'entry_fee', 'num_contestants',
+                  'secpool_id', 'sec_start_price', 'sec_end_price')
 
 
 class SecuritySerializer(serializers.ModelSerializer):
@@ -16,4 +17,4 @@ class SecuritySerializer(serializers.ModelSerializer):
 class SecurityPoolSerializer(serializers.ModelSerializer):
     class Meta:
         model = SecurityPool
-        fields = ('title', 'securities', 'start_price', 'end_price', 'security_pool_id', 'title')
+        fields = ('title', 'security')
